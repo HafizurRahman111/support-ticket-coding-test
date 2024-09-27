@@ -1,0 +1,148 @@
+/* Global Styles */
+body {
+    overflow-x: hidden;
+    background-color: #f4f4f4;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensure full viewport height */
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #0a3c55;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    height: calc(100vh - 60px); /* Adjust height based on navbar height */
+    margin-top: 60px;
+    position: fixed;
+    background-color: #0e243a;
+    color: white;
+    transition: width 0.3s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.collapsed {
+    width: 60px;
+}
+
+.sidebar .nav-link {
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #0056b3;
+}
+
+.sidebar .nav-link .icon {
+    font-size: 20px;
+    min-width: 40px;
+}
+
+.sidebar.collapsed .nav-link .text {
+    display: none;
+}
+
+/* Toggle Button Styles */
+.toggle-btn {
+    background-color: #0056b3;
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    margin: 20px 0;
+    width: 90%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.toggle-btn:hover {
+    background-color: #004494;
+    transform: scale(1.05);
+}
+
+.toggle-btn i {
+    margin-right: 8px;
+}
+
+/* Content Styles */
+.content {
+    margin-left: 250px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    transition: margin-left 0.3s ease;
+    padding: 20px;
+    min-height: calc(100vh - 80px);
+}
+.content.collapsed {
+    margin-left: 60px;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #17293a;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 250px;
+    right: 0;
+    transition: left 0.3s ease, right 0.3s ease;
+}
+
+.footer.collapsed {
+    left: 60px;
+}
+
+.email {
+    color: #b9b9b9;
+    font-size: 14px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar.collapsed {
+        width: 100%;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .content.collapsed {
+        margin-left: 0;
+    }
+
+    .footer {
+        left: 0;
+        right: 0;
+    }
+
+    .footer.collapsed {
+        left: 0;
+    }
+}
